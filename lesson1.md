@@ -149,4 +149,3 @@ for a > 0 {
 }
 fmt.Println(sum)
 ```
-
