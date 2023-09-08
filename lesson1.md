@@ -116,7 +116,7 @@ a := 4
 if a > 5 {
     fmt.Println(1)
 } else if a < 3 {
-    fmt.Println(2)
+	fmt.Println(2)
 } else {
     fmt.Println(3) // сработает вот этот и выведет 3
 }
