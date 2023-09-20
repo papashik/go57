@@ -6,7 +6,7 @@
 Объявление глобальной функции записывается так:
 ```golang
 func <имя> (<формальные параметры>) <возвращаемые значения>  {
-	<тело функции>
+    <тело функции>
 }
 ```
 <имя> - это название функции, с помощью него можно получить к ней доступ;<br>
@@ -30,12 +30,12 @@ package main
 import "fmt"
 
 func MyFunc() {
-	fmt.Println("Hello!")
+    fmt.Println("Hello!")
 }
 
 func main() {
-	MyFunc() // вызов функции, напечатается `Hello!`
-	MyFunc() // и еще раз напечатается `Hello!`
+    MyFunc() // вызов функции, напечатается `Hello!`
+    MyFunc() // и еще раз напечатается `Hello!`
 }
 ```
 ### Пример: `MyPrintFunc` - функция, принимающая строку и выводящая её в консоль:
@@ -45,12 +45,12 @@ package main
 import "fmt"
 
 func MyPrintFunc(parameter string) {
-	fmt.Println(parameter)
+    fmt.Println(parameter)
 }
 
 func main() {
-	a := "Pavel"
-	MyPrintFunc(a) // вызов функции, напечатается `Pavel`
+    a := "Pavel"
+    MyPrintFunc(a) // вызов функции, напечатается `Pavel`
 }
 ```
 При вызове функции вместо **формальных параметров** (в данном случае `parameter`) 
@@ -68,12 +68,12 @@ package main
 import "fmt"
 
 func MySummingFunc(a, b int) int {
-	return a + b // возвращает сумму переданных ей аргументов
+    return a + b // возвращает сумму переданных ей аргументов
 }
 
 func main() {
-	a, b := 3, 5
-	fmt.Println(MySummingFunc(a, b)) // выведет `8`
+    a, b := 3, 5
+    fmt.Println(MySummingFunc(a, b)) // выведет `8`
 }
 ```
 
@@ -84,13 +84,13 @@ package main
 import "fmt"
 
 func MyCalculatingFunc(a, b int) (int, int) {
-	return a + b, a * b // возвращает сумму и произведение переданных ей аргументов
+    return a + b, a * b // возвращает сумму и произведение переданных ей аргументов
 }
 
 func main() {
-	a, b := 3, 5
-	sum, mul := MyCalculatingFunc(a, b)
-	fmt.Printf("sum = %d, mul = %d", sum, mul) // выведет `sum = 8, mul = 15`
+    a, b := 3, 5
+    sum, mul := MyCalculatingFunc(a, b)
+    fmt.Printf("sum = %d, mul = %d", sum, mul) // выведет `sum = 8, mul = 15`
 }
 ```
 
@@ -101,21 +101,21 @@ package main
 import "fmt"
 
 func MyCheckingFunc(x int, arr []int) {
-	// функция проверяет, есть ли X в срезе
-	for _, v := range arr {
-		if v == x {
-			fmt.Println(x, "найдено!")
-			return // дальше искать необязательно, производим возврат
-		}
-	}
-	fmt.Println(x, "не найдено :(") // выполнится только если Х в срезе нет
+    // функция проверяет, есть ли X в срезе
+    for _, v := range arr {
+        if v == x {
+            fmt.Println(x, "найдено!")
+            return // дальше искать необязательно, производим возврат
+        }
+    }
+    fmt.Println(x, "не найдено :(") // выполнится только если Х в срезе нет
 }
 
 func main() {
-	arr := []int{1, 2, 3, 4}
+    arr := []int{1, 2, 3, 4}
 
-	MyCheckingFunc(2, arr) // выведет `2 найдено!`
-	MyCheckingFunc(5, arr) // выведет `5 не найдено :(`
+    MyCheckingFunc(2, arr) // выведет `2 найдено!`
+    MyCheckingFunc(5, arr) // выведет `5 не найдено :(`
 }
 ```
 
@@ -127,15 +127,15 @@ package main
 import "fmt"
 
 func MyTestFunc(x, y int) {
-	a := x + y
-	fmt.Println("Сумма равна", a)
+    a := x + y
+    fmt.Println("Сумма равна", a)
 }
 
 func main() {
-	x, y := 1, 2
-	a := x * y
-	b := x + y
-	MyTestFunc(a, b) // выведет `Сумма равна 5`
+    x, y := 1, 2
+    a := x * y
+    b := x + y
+    MyTestFunc(a, b) // выведет `Сумма равна 5`
 }
 ```
 
@@ -157,26 +157,26 @@ import "fmt"
 var b int = 2 // b объявлена в глобальной области видимости - к ней можно обратиться отовсюду
 
 func MyTestFunc(x, y int) int {
-	// вместе с открытой фигурной скобкой открывается новая область видимости
-	// переменные, объявленные, в этой функции, не будут видны после ее завершения
-	test := x + y // к переменной test не получится обратиться извне функции 
-	test += b
-	return test
+    // вместе с открытой фигурной скобкой открывается новая область видимости
+    // переменные, объявленные, в этой функции, не будут видны после ее завершения
+    test := x + y // к переменной test не получится обратиться извне функции 
+    test += b
+    return test
 }
 
 func main() {
-	// здесь видна только переменная b
-	b = 4 // можем ее поменять
-	r := 3
-	// здесь видны переменные b и r
+    // здесь видна только переменная b
+    b = 4 // можем ее поменять
+    r := 3
+    // здесь видны переменные b и r
 
-	if r == 3 {
-		a := 1
-		// здесь видны переменные b, r, a
-		fmt.Println(a)
-	}
-	// здесь переменная a уже не видна - она вышла из области видимости, видны b и r
+    if r == 3 {
+        a := 1
+        // здесь видны переменные b, r, a
+        fmt.Println(a)
+    }
+    // здесь переменная a уже не видна - она вышла из области видимости, видны b и r
 
-	fmt.Println(MyTestFunc(b, r)) // выведет `11`
+    fmt.Println(MyTestFunc(b, r)) // выведет `11`
 }
 ```
