@@ -4,6 +4,7 @@
 type Node struct {
     value int             // значение текущей вершинки
     next *Node            // указатель на следующую вершинку
+}
 ```
 Причем односвязный список представляется просто указателем на первую его вершинку. 
 [Академия Яндекса](https://academy.yandex.ru/handbook/algorithms/article/odnosvyaznyj-spisok)
