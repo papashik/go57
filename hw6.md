@@ -52,16 +52,18 @@ matr.Print() // выведет `0 1`
 fmt.Println(matr.Length, matr.Width) // выведет `3 2`
 
 matr = matr.Transpose()
-matr.Print() // выведет `1 0 0`
-             //         `0 1 0`
+matr.Print() // выведет `0 1 0`
+             //         `1 0 0`
 
 matr = matr.DelCol(2)
 fmt.Println(matr.IsSquare()) // true
-fmt.Println(matr.IsDiagonal()) // true
-fmt.Println(matr.IsIdentity()) // true
+fmt.Println(matr.IsDiagonal()) // false
+fmt.Println(matr.IsIdentity()) // false
+
+matr = matr.Rotate()
 matr.Print() // выведет `1 0`
              //         `0 1`
-
+fmt.Println(matr.IsIdentity()) // true
 fmt.Println(matr.MainDiagonal()) // выведет `[1 1]`
 
 matr.ResetThis()
