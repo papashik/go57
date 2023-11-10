@@ -21,7 +21,7 @@ var first Vector
 first.x, first.y, first.z = 1, 1, 1
 fmt.Println(first.Length()) // ~1.7
 
-second := createVector(Point{0, 1, 1}, Point{0, 2, 1})
+second := CreateVector(Point{0, 1, 1}, Point{0, 2, 1})
 fmt.Println(second) // {0, 1, 0}
 second = second.Multiply(2) // теперь second = {0 2 0}
 fmt.Println(second.Length()) // 2
