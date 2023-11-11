@@ -6,13 +6,15 @@
 1. тип структуры пространственной точки `Point`, содержащий три поля - три координаты точки: `x, y, z float64`;
 2. тип структуры вектора `Vector`, содержащий три поля - три координаты вектора: `x, y, z float64`;
 3. функцию `func CreateVector(a, b Point) Vector` - создаёт и возвращает вектор $\overrightarrow{ab}$ из переданных в качестве параметров точек $a$ и $b$;
-4. метод `func (v Vector) Length() float64`, возвращающий длину вектора;
-5. метод `func (v Vector) IsCollinearTo(other Vector) bool`, возвращающий, коллинеарны ли вектора `v` и `other`;
-6. метод `func (v Vector) Multiply(a float64) Vector`, умножающий вектор `v` на число `a` и возвращающий результирующий вектор;
-7. метод `func (v Vector) Add(other Vector) Vector`, возвращающий вектор, являющийся результатом сложения векторов `v` и `other`;
-8. метод `func (v Vector) GetAngleTo(other Vector) float64`, возвращающий угол между векторами `v` и `other` (в радианах);
-9. метод `func (v Vector) ScalarProductWith(other Vector) float64`, возвращающий результат скалярного произведения `v` и `other`;
-10. метод `func (v Vector) VectorProductWith(other Vector) Vector`, возвращающий результат векторного произведения `v` и `other`.
+4. метод `func (p Point) Add(v Vector) Point`, возвращающий точку, являющуюся результатом прибавления вектора `v` к исходной точке `p`;
+5. метод `func (v Vector) Length() float64`, возвращающий длину вектора;
+6. метод `func (v Vector) IsCollinearTo(other Vector) bool`, возвращающий, коллинеарны ли вектора `v` и `other`;
+7. метод `func (v Vector) Multiply(a float64) Vector`, умножающий вектор `v` на число `a` и возвращающий результирующий вектор;
+8. метод `func (v Vector) Add(other Vector) Vector`, возвращающий вектор, являющийся результатом сложения векторов `v` и `other`;
+9. метод `func (v Vector) GetAngleTo(other Vector) float64`, возвращающий угол между векторами `v` и `other` (в радианах);
+10. метод `func (v Vector) ScalarProductWith(other Vector) float64`, возвращающий результат скалярного произведения `v` и `other`;
+11. метод `func (v Vector) VectorProductWith(other Vector) Vector`, возвращающий результат векторного произведения `v` и `other`;
+12. *(задача на пятерку) функцию `func IsPolygon(arr []Vector) bool`, возвращающую, образует ли переданный массив векторов `arr` замкнутую цепь.
 
 Пример использования:
 ```golang
