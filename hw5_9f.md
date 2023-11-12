@@ -39,5 +39,5 @@ fmt.Println(first.GetAngleTo(first.Multiply(-1))) // ~3.14
 fmt.Println(first.ScalarProductWith(second)) // 2
 
 fourth := first.VectorProductWith(second) // {-2 0 2}
-fmt.Println(fourth.Length()) // 8
+fmt.Println(fourth.Length()) // ~2.8
 ```
