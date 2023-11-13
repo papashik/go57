@@ -56,7 +56,7 @@ matr = matr.Transpose()
 matr.Print() // выведет `0 1 0`
              //         `1 0 0`
 
-matr = matr.DelCol(2)
+matr = matr.DelColumn(2)
 fmt.Println(matr.IsSquare()) // true
 fmt.Println(matr.IsDiagonal()) // false
 fmt.Println(matr.IsIdentity()) // false
